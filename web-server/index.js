@@ -20,7 +20,7 @@ app.use(
       resave: false,
       saveUninitialized: true,
       cookie: {
-        domain: "localhost",
+        domain: "practice-chatterbox.s3-website.ap-northeast-2.amazonaws.com",
         path: "/",
         maxAge: 24 * 6 * 60 * 10000,
         sameSite: "none",
@@ -33,7 +33,7 @@ app.use(
 app.use(express.json());
 
 app.use(cors({
-  origin: "*",
+  origin: "http://practice-chatterbox.s3-website.ap-northeast-2.amazonaws.com",
   method: "GET, POST, OPTION",
   credentials: true,
 }));

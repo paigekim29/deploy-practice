@@ -9,12 +9,13 @@ module.exports = {
         email: req.body.email, password: req.body.password
       }
     })
-
+	console.log(userInfo);
     if (!userInfo) {
       res.status(404).send("invalid user")
     } else {
       req.session.email = userInfo.email;
-
+	console.log(req.session.id);	
+console.log(req.session);
       res.status(200).json({
         id: userInfo.username
       })
@@ -53,7 +54,8 @@ module.exports = {
   },
 
   userController: async (req, res) => {
-    // TODO : 유저 회원정보 요청 로직 작성
+	console.log(req.session);   
+ // TODO : 유저 회원정보 요청 로직 작성
     if (!req.session.email) {
       res.status(401).json("not authorized")
 
