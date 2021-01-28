@@ -56,6 +56,6 @@ app.post("/signout", mainController.signOutController);
 //     .listen(port);
 // module.exports = server;
 app.listen(port);
-
+console.log(port);
 module.exports = app;
 
